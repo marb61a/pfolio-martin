@@ -1,6 +1,6 @@
 {
   "devFiles": [
-    "static/development/dll/dll_5da161affe488fec3086.js"
+    "static/development/dll/dll_15d904c386e90484a994.js"
   ],
   "pages": {
     "/_app": [
@@ -12,10 +12,6 @@
       "static/runtime/main.js"
     ],
     "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/portfolios": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
