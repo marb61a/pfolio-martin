@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BaseLayout from '../components/layouts/BaseLayout';
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -7,9 +9,19 @@ class Index extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    console.log("Component Mounted");
+  }
+
   render() {
     return(
-      <div>This is the Index</div>  
+      <BaseLayout>
+        <div className="main-section">
+          <div>
+            
+          </div>
+        </div>
+      </BaseLayout> 
     )
   }
 }
