@@ -1,6 +1,8 @@
 import React from 'react';
+import Typed from 'react-typed';
 
 import BaseLayout from '../components/layouts/BaseLayout';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
   constructor(props) {
@@ -15,11 +17,20 @@ class Index extends React.Component {
 
   render() {
     return(
-      <BaseLayout>
+      <BaseLayout 
+        className={`cover`}
+        headerType="index"
+        title='Martin Byrne - Portfolio'
+      >
         <div className="main-section">
-          <div>
-            
+          <div className="background-image">
+            <img src="/static/images/background-index.png" />
           </div>
+          <Container>
+            <Row>
+              
+            </Row>
+          </Container>
         </div>
       </BaseLayout> 
     )

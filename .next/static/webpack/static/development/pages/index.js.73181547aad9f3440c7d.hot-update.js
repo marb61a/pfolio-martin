@@ -1,17 +1,20 @@
 webpackHotUpdate("static/development/pages/index.js",{
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./components/shared/Header.js":
+/*!*************************************!*\
+  !*** ./components/shared/Header.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/home/martin/pfolio-martin/pages/index.js";
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/dist/reactstrap.es.js");
+var _jsxFileName = "/home/martin/pfolio-martin/components/shared/Header.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -33,64 +36,56 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Index =
+
+
+var Header =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Index, _React$Component);
+  _inherits(Header, _React$Component);
 
-  function Index(props) {
-    var _this;
+  function Header() {
+    _classCallCheck(this, Header);
 
-    _classCallCheck(this, Index);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
-    _this.state = {};
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Header).apply(this, arguments));
   }
 
-  _createClass(Index, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      console.log("Component Mounted");
-    }
-  }, {
+  _createClass(Header, [{
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 21
         },
         __self: this
-      }, "This is the Index");
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+        className: "port-navbar port-nav-base absolute",
+        color: "transparent",
+        dark: true,
+        expand: "md",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
+        className: "port-navbar-brand",
+        href: "/",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, "Martin Byrne")));
     }
   }]);
 
-  return Index;
+  return Header;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
-    (function (Component, route) {
-      if(!Component) return
-      if (false) {}
-      module.hot.accept()
-      Component.__route = route
-
-      if (module.hot.status() === 'idle') return
-
-      var components = next.router.components
-      for (var r in components) {
-        if (!components.hasOwnProperty(r)) continue
-
-        if (components[r].Component.__route === route) {
-          next.router.update(r, Component)
-        }
-      }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
-  
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+/* harmony default export */ __webpack_exports__["default"] = (Header);
 
 /***/ })
 
 })
-//# sourceMappingURL=index.js.40b2326eee865a58d8a2.hot-update.js.map
+//# sourceMappingURL=index.js.73181547aad9f3440c7d.hot-update.js.map
