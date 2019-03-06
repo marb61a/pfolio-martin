@@ -9,6 +9,17 @@ class Index extends React.Component {
     super(props);
     
     this.state = {};
+
+    this.roles = [
+      'Web Developer',
+      'JavaScript',
+      'Frontend',
+      'React',
+      'Open Source Enthusiast',
+      'Linux',
+      'Android',
+      'Tech Lover'
+    ]
   }
 
   componentDidMount() {
@@ -28,7 +39,30 @@ class Index extends React.Component {
           </div>
           <Container>
             <Row>
-              
+              <Col md="6">
+                <div className="hero-section">
+
+                </div>
+              </Col>
+              <Col md="6" className="hero-welcome-wrapper">
+                <div className="hero-welcome-text">
+                  <h1>
+                    Welcome to Martin's Portfolio Website
+                    Checkout some stuff I have done and how you can contact me
+                  </h1>
+                </div>
+                <Typed
+                  loop
+                  typeSpeed={60}
+                  backSpeed={60}
+                  strings={this.roles}
+                  backDelay={1000}
+                  loopCount={0}
+                  showCursor
+                  className="self-typed"
+                  cursorChar="|"
+                />
+              </Col>
             </Row>
           </Container>
         </div>

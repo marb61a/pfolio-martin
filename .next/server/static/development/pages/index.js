@@ -264,6 +264,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
     _this.state = {};
+    _this.roles = ['Web Developer', 'JavaScript', 'Frontend', 'React', 'Open Source Enthusiast', 'Linux', 'Android', 'Tech Lover'];
     return _this;
   }
 
@@ -281,43 +282,93 @@ function (_React$Component) {
         title: "Martin Byrne - Portfolio",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-section",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "background-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/static/images/background-index.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 38
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 40
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 41
         },
         __self: this
-      }))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+        md: "6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-section",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+        md: "6",
+        className: "hero-welcome-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "hero-welcome-text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, "Welcome to Martin's Portfolio Website Checkout some stuff I have done and how you can contact me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_typed__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        loop: true,
+        typeSpeed: 60,
+        backSpeed: 60,
+        strings: this.roles,
+        backDelay: 1000,
+        loopCount: 0,
+        showCursor: true,
+        className: "self-typed",
+        cursorChar: "|",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }))))));
     }
   }]);
 
