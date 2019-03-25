@@ -5,32 +5,57 @@
     padding: 40px;
 
     .port-navbar {
-        color: white;
-        font-size: 24px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: bold;
+        &-brand {
+            color: white;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        &-item {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+
+        &-link {
+            color: white;
+            font-weight: bold;
+            letter-spacing: 0.8px;
+            font-size: 18px;
+            text-transform: uppercase;
+    
+            &.active {
+                color: #dba919;
+            }
+    
+            &:hover, &:focus {
+                color: #dba919;
+            }
+        }
     }
 
-    &-item {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
+    .port-dropdown-menu {
+        .port-dropdown-item {
+            color: #4e4e4e;
 
-
-    &-link {
-        color: white;
-        font-weight: bold;
-        letter-spacing: 0.8px;
-        font-size: 18px;
-        text-transform: uppercase;
-  
         &.active {
             color: #dba919;
         }
-  
-        &:hover, &:focus {
-            color: #dba919;
-        }
-      }
+    }
+    
+
+    .port-dropdown-toggle {
+        color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    }
 }
+
+.port-navbar.port-nav-base.port-nav-default {
+    padding: 30px;
+    background-color: $secondary !important;
+}
+  
