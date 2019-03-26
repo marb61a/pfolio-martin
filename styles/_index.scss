@@ -24,4 +24,32 @@
         margin-bottom: 10px;
     }
     
+    perspective: 1000px;
+    color: white;
+    width: 480px;
+    position: relative;
+
+    &-content {
+        position: absolute;
+        bottom: 20px;
+        width: 360px;
+        left: 6%;
+        z-index: 1;
+
+        &-intro {
+            font-size: 17px;
+        }
+    }
+}
+
+.image {
+    width: auto;
+    max-width: 100%;
+}
+
+.hero-welcome-text > h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 27px;
+    margin-top: 80px;
 }

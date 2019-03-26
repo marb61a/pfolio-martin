@@ -8,7 +8,9 @@ class Cv extends React.Component {
     render() {
         return (
             <BaseLayout>
-            
+                <BasePage>
+                
+                </BasePage>
             </BaseLayout>
         );
     }
