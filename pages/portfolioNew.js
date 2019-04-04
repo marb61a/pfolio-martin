@@ -40,18 +40,27 @@ class PortfolioNew extends React.Component {
                 });
                 Router.pushRoute('/portfolios');
             })
-            .catch(
-
-            );
+            .catch((err) => {
+                const error = err.message || 'Server Error!';
+                setSubmitting(false);
+                this.setState({error});
+            });
     }
 
     render() {
         return(
-            <BaseLayout>
-                <BasePage>
+            <BaseLayout {...this.props.auth}>
+                <BasePage
+                    className='portfolio-create-page'
+                    title='Create a new portfolio'
+                >
                     <Row>
                         <Col md='6'>
-                        
+                            <PortfolioCreateForm 
+                                initialValues={INITIAL_VALUES}
+                                error={error}
+                                onSubmit={this.savePortfolio}
+                            />
                         </Col>
                     </Row>
                 </BasePage>
