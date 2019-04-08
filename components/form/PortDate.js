@@ -19,6 +19,14 @@ export default class PortDate extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    setFieldValueAndTouched(date, touched) {
+        const { setFieldValue, setFieldTouched } = this.props.form;
+        const { name } = this.props.field;
+    
+        setFieldValue(name, date, true);
+        setFieldTouched(name, touched, true);
+    }
+
     handleChange(date) {
         this.setState({
             dateValue: date
@@ -54,6 +62,9 @@ export default class PortDate extends React.Component {
                         />
                     }
                 </div>
+                {
+                    
+                }
             </FormGroup>
         );
     }
