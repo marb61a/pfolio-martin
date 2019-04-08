@@ -44,6 +44,7 @@ export default class PortDate extends React.Component {
     }
 
     render() {
+        const { canBeDisabled, label, field, form: { touched, errors} } = this.props;
         const { isHidden, dateValue } = this.state;
 
         return(
@@ -63,7 +64,22 @@ export default class PortDate extends React.Component {
                     }
                 </div>
                 {
-                    
+                    canBeDisabled && isHidden &&
+                    <Button onClick={() => this.toggleDate(null)}>
+                        Still Working ... 
+                    </Button>
+                }
+                {
+                    canBeDisabled && isHidden &&
+                    <React.Fragment>
+                        <span> Still Working Here </span>
+                        <Button onClick={() => this.toggleDate(dateValue)}> Set End Date </Button>
+                    </React.Fragment>
+                }
+                {
+                    touched[field.name] &&
+                    errors[field.name] && 
+                    <div className="error">{errors[field.name]}</div>
                 }
             </FormGroup>
         );

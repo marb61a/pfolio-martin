@@ -14,9 +14,21 @@ export default role => Component => class withAuth extends React.Component {
         let isAuthorized = false;
 
         if(role) {
-
+            if (userRole && userRole === role) { isAuthorized = true };
         } else {
             isAuthorized = true;
+        }
+
+        if(!isAuthenticated) {
+            <BaseLayout>
+            
+            </BaseLayout>
+        } else if (!isAuthorized) {
+            <BaseLayout>
+            
+            </BaseLayout>
+        } else {
+            return ( <Component {...this.props} />)
         }
     }
 
