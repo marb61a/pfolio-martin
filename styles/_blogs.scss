@@ -1,0 +1,31 @@
+// Blog listing
+.blog-listing-page {
+    min-height: 100vh;
+    background-color: #ecedee;
+
+    .blog-body {
+        padding: 50px 0 0 0;
+    }
+
+    .post-preview {
+        > a {
+            color: $gray-900;
+            &:focus,
+            &:hover {
+                text-decoration: none;
+                color: $primary;
+            }
+            > .post-title {
+                font-size: 30px;
+                margin-top: 30px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            > .post-subtitle {
+                font-weight: 300;
+                margin: 0 0 10px;
+                color: #565656;
+            }
+        }
+    }
+}
