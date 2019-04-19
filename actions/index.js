@@ -29,3 +29,20 @@ const rejectPromise = (resError) => {
     
     return Promise.reject(error);
 }
+
+// Blog Actions
+export const getBlogs = async (req) => {
+    return await axiosInstance.get(`/blogs/s/${slug}`)
+        .then(response => response.data);    
+};
+
+export const getUserBlogs = async (req) => {
+    return await axiosInstance.get('/blogs/me', setAuthHeader(req))
+        .then(response => response.data);
+};
+
+export const createBlog = (blogData, lockId) => {
+    return axiosInstance.post(`/blogs?lockId=${lockId}`, blogData, setAuthHeader())
+        .then(response => response.data)
+        .catch(err => rejectPromise(err))
+};
