@@ -28,12 +28,29 @@ const rejectPromise = (resError) => {
     }
     
     return Promise.reject(error);
-}
+};
+
+// Portfolio Actions
+export const getPortfolios = async () => {
+    return await axiosInstance.get('/portfolios')
+        .then(response => response.data);
+};
+
+export const createPortfolio = async (portfolioData) => {
+    return await axiosInstance.post('/portfolios', portfolioData, setAuthHeader())
+        .then(response => response.data)
+        .catch(errpr => rejectPromise(error));
+};
 
 // Blog Actions
 export const getBlogs = async (req) => {
     return await axiosInstance.get(`/blogs/s/${slug}`)
         .then(response => response.data);    
+};
+
+export const getBlogBySlug = async (slug) => {
+    return await axiosInstance.get(`/blogs/s/${slug}`)
+        .then(response => response.data);
 };
 
 export const getUserBlogs = async (req) => {

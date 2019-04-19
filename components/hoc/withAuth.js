@@ -11,6 +11,7 @@ export default role => Component => class withAuth extends React.Component {
 
     renderProtectedPage() {
         const { isAuthenticated, user } = this.props.auth;
+        const userRole = user && user[`${process.env.NAMESPACE}/role`];
         let isAuthorized = false;
 
         if(role) {
@@ -20,12 +21,14 @@ export default role => Component => class withAuth extends React.Component {
         }
 
         if(!isAuthenticated) {
-            <BaseLayout>
-            
+            <BaseLayout {...this.props.auth}>
+                <BasePage>
+                    <h1> You are not authenticated. Please Login to access this page. </h1>
+                </BasePage>
             </BaseLayout>
         } else if (!isAuthorized) {
-            <BaseLayout>
-            
+            <BaseLayout {...this.props.auth}>
+                <h1> You are not authorized. You dont have a permission to visit this page </h1>
             </BaseLayout>
         } else {
             return ( <Component {...this.props} />)
