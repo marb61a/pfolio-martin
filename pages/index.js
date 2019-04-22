@@ -8,7 +8,9 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     
-    this.state = {};
+    this.state = {
+      isFlipping: false
+    };
 
     this.roles = [
       'Web Developer',
@@ -19,11 +21,23 @@ class Index extends React.Component {
       'Linux',
       'Android',
       'Tech Lover'
-    ]
-  }
+    ];
+  };
 
   componentDidMount() {
-    console.log("Component Mounted");
+    this.animateCard();
+  }
+
+  componentWillUnmount() {
+    this.cardAnimationInterval && clearInterval(this.cardAnimationInterval);
+  }
+
+  animateCard(){
+    this.cardAnimationInterval = setInterval(() => {
+      this.setState({
+        isFlipping: !this.state.isFlipping
+      });
+    }, 60000);
   }
 
   render() {
@@ -41,7 +55,20 @@ class Index extends React.Component {
             <Row>
               <Col md="6">
                 <div className="hero-section">
-
+                  <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
+                    <div className="front">
+                      <div className="hero-section-content"> 
+                        <h2> Full Stack Web Developer </h2>
+                        <div className="hero-section-content-intro">
+                          Have a look at my portfolio and job history.
+                        </div>
+                      </div>
+                      <img alt="Guy programming welcome picture" className="image" src="/static/images/section-1.jpg"/>
+                      <div className="shadow-custom">
+                        <div className="shadow-inner"> </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Col>
               <Col md="6" className="hero-welcome-wrapper">
