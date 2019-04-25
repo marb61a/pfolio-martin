@@ -22,11 +22,34 @@ class Auth0 {
     }
 
     login() {
-
+        this.auth0.authorize();
     }
 
     logout() {
+        Cookies.remove('jwt');
 
+        this.auth0.logout({
+            returnTo: process.env.BASE_URL,
+            clientID: CLIENT_ID
+        });
+    }
+
+    async clientAuth() {
+        const token = Cookies.getJSON('jwt');
+        const verifiedToken = await this.verifyToken(token);
+
+        return verifiedToken;    
+    }
+
+    async serverAuth(req) {
+        if(req.headers.cookie) {
+            const token = getCookieFromReq(req, 'jwt');
+            const verifiedToken = await this.verifyToken(token);
+
+            return verifiedToken;
+        }
+
+        return undefined;
     }
 }
 
