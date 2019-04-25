@@ -11,9 +11,9 @@ class Portfolio extends React.Component {
         let portfolio = {};
 
         try {
-            const response = await axios.get(``);
+            const response = await axios.get(`${portfolioId}`);
             portfolio = response.data;
-        } catch {
+        } catch(err) {
             console.error(err);
         }
 
