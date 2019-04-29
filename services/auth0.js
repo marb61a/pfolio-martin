@@ -7,7 +7,10 @@ import { resolve } from 'path';
 class Auth0 {
     constructor() {
         this.auth0 = new auth0.WebAuth({
-            domain: ''
+            domain: '',
+            clientID: CLIENT_ID,
+            redirectUri: `${process.env.BASE_URL}/callback`,
+            responseType: 'token id_token',
         });
 
         this.login = this.login.bind(this);
@@ -17,8 +20,22 @@ class Auth0 {
 
     handleAuthentication() {
         return new Promise((resolve, reject) => {
-
+            this.auth0.parseHash((err, authResult) => {
+                if (authResult && authResult.accessToken && authResult.idToken) {
+                    this.setSession(authResult);
+                    resolve();
+                } else if (err) {
+                    reject(err);
+                    console.log(err);
+                }
+            });
         });
+    }
+
+    setSession(authResult) {
+        const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+
+        Cookies.set('jwt', authResult.idToken);
     }
 
     login() {
@@ -32,6 +49,12 @@ class Auth0 {
             returnTo: process.env.BASE_URL,
             clientID: CLIENT_ID
         });
+    }
+
+    async getJWKS() {
+        const res = await axios.get('');
+        const jwks = res.data;
+        return jwks;
     }
 
     async clientAuth() {
