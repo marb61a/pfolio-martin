@@ -23,6 +23,15 @@ export const Icon = styled(({ className, ...rest }) => {
     vertical-align: text-bottom;
 `;
 
+export const Menu = styled('div')`
+    & > * {
+        display: inline-block;
+    }
+    & > * + * {
+        margin-left: 15px;
+    }
+`;
+
 export const Toolbar = styled(Menu)`
     position: relative;
     padding: 1px 18px 17px;
