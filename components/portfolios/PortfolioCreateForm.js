@@ -1,34 +1,33 @@
 import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Button, Alert } from 'reactstrap';
+import moment from 'moment';
 
-export default class PortfolioCreateForm extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            title: '', 
-            description: '', 
-            language: ''
-        };
+import PortInput from '../form/PortInput';
+import PortDate from '../form/PortDate';
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+const validateInputs = (values) => {
+    let errors ={};
 
-    handleChange(event) {
-        const field = event.target.name;
-        this.setState({
-            [field]: event.target.value
+    Object.entries(values)
+        .forEach(([key, value]) => {
+            if (!values[key] && key !== 'endDate') {
+                errors[key] = `Field ${key} is required!`;
+            }
         });
+    
+    const startDate = moment(values.startDate);
+    const endDate = moment(values.endDate);
+    
+    if (startDate && endDate && endDate.isBefore(startDate)) {
+        errors.endDate = 'End Date cannot be before start date!!!';
     }
+    
+    return errors;
+};
 
-    handleSubmit(event) {
-        
-    }
+const PortfolioCreateForm = ({initialValues, onSubmit, error}) => (
+    <div>
 
-    render() {
-        return(
-            <div>
-
-            </div>
-        )
-    }
-}
+    </div>
+);
