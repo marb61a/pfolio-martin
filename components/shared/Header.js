@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ActiveLink from '../ActiveLink';
 
 import {
     Collapse,
@@ -14,13 +15,42 @@ import {
     DropdownToggle,
     DropdownMenu
 } from 'reactstrap';
+import auth0 from '../../services/auth0';
+
+const BsNavLink = (props) => {
+    const { route, title } = this.props;
+    const className = props.className || "";
+
+    return(
+        <ActiveLink activeClassName="active" route={route}>
+            <a className={`nav-link port-navbar-link ${className}`}> {title} </a>
+        </ActiveLink>
+    );
+}
+
+const Login = () => {
+    return (
+        <span onClick={auth0.login} className="nav-link port-navbar-link clickable"> 
+            Login 
+        </span>
+    )
+};
+  
+const Logout = () => {
+    return (
+        <span onClick={auth0.logout} className="nav-link port-navbar-link clickable"> 
+            Logout 
+        </span>
+    )
+};
 
 class Header extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isOpen: false
+            isOpen: false,
+            dropdownOpen: false
         };
 
         this.toggle = this.toggle.bind(this);
