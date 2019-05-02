@@ -62,6 +62,38 @@ class Header extends React.Component {
         });
     }
 
+    toggleDropdown() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
+    }
+
+    renderBlogMenu() {
+        const { isSiteOwner } = this.props;
+
+        if(isSiteOwner) {
+            <Dropdown
+                className="port-navbar-link port-dropdown-menu" 
+                nav 
+                isOpen={this.state.dropdownOpen} 
+                toggle={this.toggleDropdown}
+            >
+                <DropdownToggle>
+
+                </DropdownToggle>
+                <DropdownMenu>
+                    
+                </DropdownMenu>
+            </Dropdown>
+        }
+
+        return (
+            <NavItem className="port-navbar-item">
+                <BsNavLink route="/blogs" title="Blog" />
+            </NavItem>
+        );
+    }
+
     render() {
         const { isOpen } = this.state;
         
