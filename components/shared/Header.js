@@ -78,11 +78,19 @@ class Header extends React.Component {
                 isOpen={this.state.dropdownOpen} 
                 toggle={this.toggleDropdown}
             >
-                <DropdownToggle>
-
+                <DropdownToggle className="port-dropdown-toggle" nav caret>
+                    Blog
                 </DropdownToggle>
                 <DropdownMenu>
-                    
+                    <DropdownItem>
+                        <BsNavLink className="port-dropdown-item" route="/blogs" title="Blogs" />
+                    </DropdownItem>
+                    <DropdownItem>
+                        <BsNavLink className="port-dropdown-item" route="/blogs/new" title="Create a Blog" />
+                    </DropdownItem>
+                    <DropdownItem>
+                        <BsNavLink className="port-dropdown-item" route="/blogs/dashboard" title="Blogs Dashboard" />
+                    </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         }
@@ -109,8 +117,30 @@ class Header extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <nav className="ml-auto" navbar>
                             <NavItem className="port-navbar-item">
-
+                                <BsNavLink route="/" title="Home" />
                             </NavItem>
+                            <NavItem className="port-navbar-item">
+                                <BsNavLink route="/about" title="About" />
+                            </NavItem>
+                            <NavItem className="port-navbar-item">
+                                <BsNavLink route="/portfolios" title="Portfolio" />
+                            </NavItem>
+                            {this.renderBlogMenu()}
+                            <NavItem className="port-navbar-item">
+                                <BsNavLink route="/cv" title="Cv" />
+                            </NavItem>
+                            {
+                                isAuthenticated && 
+                                <NavItem className="port-navbar-item">
+                                    <Login />
+                                </NavItem>
+                            }
+                            {
+                                isAuthenticated &&
+                                <NavItem className="port-navbar-item">
+                                    <Logout />
+                                </NavItem>
+                            }
                         </nav>
                     </Collapse>
                 </Navbar>
